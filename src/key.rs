@@ -17,6 +17,7 @@ impl Key for u64 {
 
 impl Key for Vec<u8> {
     fn bitxor(&self, other: &Vec<u8>) -> Vec<u8> {
+        assert!(self.len() == other.len());
         self.iter().zip(other.iter()).map(|(digit1, digit2)| digit1 ^ digit2).collect()
     }
     fn bits(&self) -> usize {
