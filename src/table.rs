@@ -11,7 +11,7 @@ pub struct Table<TKey: Key, TValue> {
 
 impl<TKey: Key, TValue> Table<TKey, TValue> {
     /// Creates a new Table instance.
-    pub fn new(my_key: TKey, max_bits: usize, max_bucket_size: usize) -> Table<TKey, TValue> {
+    pub fn new(my_key: TKey, max_bucket_size: usize, max_bits: usize) -> Table<TKey, TValue> {
         let buckets = (0..max_bits+1).map(|_| Bucket::new(max_bucket_size)).collect();
         Table {
             buckets: buckets,

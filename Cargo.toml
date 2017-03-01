@@ -1,6 +1,6 @@
 [package]
 name = "simple_kbuckets"
-version = "0.1.1"
+version = "0.2.0"
 authors = ["Valentin Lorentz <progval+git@progval.net>"]
 description = "Simple implementation of a Kademlia-like hash table."
 license = "MIT"

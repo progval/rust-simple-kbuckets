@@ -4,7 +4,7 @@ use simple_kbuckets::Table;
 
 #[test]
 fn retrieve_one_exact() {
-    let mut table = Table::new(0b0101, 4, 3);
+    let mut table = Table::new(0b0101, 3, 4);
     table.update(0b1111, 42);
     table.update(0b0000, 43);
     table.update(0b1010, 44);
@@ -17,7 +17,7 @@ fn retrieve_one_exact() {
 
 #[test]
 fn retrieve_one_closest() {
-    let mut table = Table::new(0b0101, 4, 3);
+    let mut table = Table::new(0b0101, 3, 4);
     table.update(0b1111, 42);
     table.update(0b0000, 43);
     table.update(0b1010, 44);
@@ -30,7 +30,7 @@ fn retrieve_one_closest() {
 
 #[test]
 fn bucket_ageing() {
-    let mut table = Table::new(0b0101, 4, 3);
+    let mut table = Table::new(0b0101, 3, 4);
     table.update(0b1101, 42);
     table.update(0b1111, 43);
     table.update(0b1100, 44);
@@ -42,7 +42,7 @@ fn bucket_ageing() {
 
 #[test]
 fn bucket_ageing_refresh() {
-    let mut table = Table::new(0b0101, 4, 3);
+    let mut table = Table::new(0b0101, 3, 4);
     table.update(0b1101, 42);
     table.update(0b1111, 43);
     table.update(0b1100, 44);
